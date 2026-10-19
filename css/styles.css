@@ -226,7 +226,14 @@ nav a[aria-current="page"] {
 .site-name { font-size: 1.6rem; font-weight: 700; margin: 0 0 1rem; }
 nav ul { flex-direction: column; gap: .35rem; }
 nav a { display: inline-block; padding: .25rem .5rem; border-radius: 4px; }
-nav a[aria-current="page"] { background: #fff; color: var(--brand-color); text-decoration: none; }
+nav a[aria-current="page"] {
+   background: #fff;
+   color: var(--brand-color);
+   text-decoration: none;
+   font-weight: bold;
+   border: 2px solid #b45309;
+   border-radius: 6px;
+}
 main { max-width: var(--content-width); padding: 1rem; }
 .page-intro { border-left: 5px solid var(--accent-color); }
 .page-intro h1 { color: var(--brand-color); font-size: 2rem; }
