@@ -1,0 +1,245 @@
+/* BASIC RESET */
+
+/* Makes an element's declared width include its padding and border. */
+* {
+   box-sizing: border-box;
+}
+
+
+/* COLOR VARIABLES */
+
+/* Stores the site's main colors so they can be reused throughout the CSS. */
+:root {
+   --brand-color: #243b53;
+   --text-color: #202124;
+   --background-color: #f5f7fa;
+   --section-color: #ffffff;
+}
+
+
+/* PAGE BODY */
+
+body {
+   margin: 0; /* Removes the browser's default outer margin. */
+   background-color: var(--background-color); /* Sets the page background. */
+   color: var(--text-color); /* Sets the default text color. */
+   font-family: Arial, Helvetica, sans-serif; /* Sets the font with fallbacks. */
+   font-size: 1rem; /* Uses the root font size as the default text size. */
+   line-height: 1.6; /* Adds vertical spacing between lines for readability. */
+}
+
+
+/* HEADER AND NAVIGATION */
+
+header {
+   background-color: var(--brand-color); /* Gives the header the brand color. */
+   color: white; /* Makes header text white. */
+   padding: 1.5rem; /* Adds space inside the header. */
+}
+
+h1 {
+   font-size: 2rem; /* Makes the main heading larger than normal text. */
+   margin-top: 0; /* Removes extra space above the heading. */
+}
+
+nav ul {
+   display: flex; /* Turns the navigation list into a Flexbox container. */
+   flex-wrap: wrap; /* Lets links move to another line if space gets too small. */
+   gap: 1rem; /* Adds equal spacing between navigation items. */
+   list-style: none; /* Removes the bullet points from the list. */
+   padding: 0; /* Removes the list's default inner spacing. */
+   margin-bottom: 0; /* Removes extra space below the navigation list. */
+}
+
+nav li {
+   margin: 0; /* Flexbox gap now handles spacing between the list items. */
+}
+
+nav a {
+   color: white; /* Makes navigation links white. */
+   text-decoration: none; /* Removes the normal underline from links. */
+}
+
+nav a:hover,
+nav a:focus-visible {
+   text-decoration: underline; /* Shows an underline when hovered or keyboard-focused. */
+}
+
+
+/* MAIN PAGE CONTENT */
+
+main {
+   max-width: 800px; /* Stops the content from becoming too wide on large screens. */
+   margin: 0 auto; /* Centers the main content horizontally. */
+   padding: 2rem; /* Adds space around the content inside main. */
+}
+
+section {
+   background-color: var(--section-color); /* Gives each section a white background. */
+   margin-bottom: 1.5rem; /* Adds space between sections. */
+   padding: 1.5rem; /* Adds space inside each section. */
+}
+
+h2 {
+   color: var(--brand-color); /* Uses the brand color for section headings. */
+   font-size: 1.5rem; /* Makes section headings larger than normal text. */
+   margin-top: 0; /* Removes unnecessary space above the heading. */
+}
+
+p {
+   margin-bottom: 1rem; /* Adds spacing below paragraphs. */
+}
+
+
+/* WELCOME SECTION */
+
+/* Uses the existing welcome ID to make that text larger. */
+#welcome {
+   font-size: 1.75rem;
+}
+
+
+/* FOOTER */
+
+footer {
+   background-color: var(--brand-color); /* Matches the footer to the header. */
+   color: white; /* Makes footer text white. */
+   padding: 1rem; /* Adds space inside the footer. */
+   text-align: center; /* Centers the footer text. */
+}
+
+footer p {
+   margin: 0; /* Removes the paragraph's default margin inside the footer. */
+}
+
+
+/* CONTACT FORM */
+
+/* Separates each form field from the next. */
+.form-group {
+   margin-bottom: 1.5rem;
+}
+
+/* Makes text labels easy to identify. */
+.form-group label {
+   display: block;
+   font-weight: bold;
+   margin-bottom: 0.5rem;
+}
+
+/* Styles text inputs, dropdowns, and message boxes. */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+   width: 100%;
+   padding: 0.75rem;
+   border: 2px solid #526579;
+   border-radius: 4px;
+   background-color: #ffffff;
+   color: var(--text-color);
+   font: inherit;
+}
+
+/* Keeps the message box within the content area. */
+textarea {
+   resize: vertical;
+}
+
+/* Styles groups of related choices. */
+fieldset {
+   border: 2px solid #526579;
+   border-radius: 4px;
+   padding: 1rem;
+   margin: 0 0 1.5rem;
+}
+
+legend {
+   font-weight: bold;
+   color: var(--brand-color);
+   padding: 0 0.5rem;
+}
+
+/* Aligns radio buttons and checkboxes with their labels. */
+.choice-group {
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+   margin-bottom: 0.75rem;
+}
+
+.choice-group input {
+   width: 1.25rem;
+   height: 1.25rem;
+   flex-shrink: 0;
+}
+
+/* Provides readable instructions beneath fields. */
+.form-hint {
+   color: #36485b;
+   font-size: 0.95rem;
+   margin-top: 0.4rem;
+}
+
+/* Styles the form submission button. */
+button[type="submit"] {
+   background-color: var(--brand-color);
+   color: #ffffff;
+   border: 2px solid var(--brand-color);
+   border-radius: 4px;
+   padding: 0.75rem 1.5rem;
+   font: inherit;
+   font-weight: bold;
+   cursor: pointer;
+}
+
+/* Makes button hover visibly different. */
+button[type="submit"]:hover {
+   background-color: #152a3e;
+}
+
+/* Makes keyboard focus clearly visible. */
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+   outline: 3px solid #b45309;
+   outline-offset: 3px;
+}
+
+/* Highlights invalid fields after user interaction. */
+input:not(:placeholder-shown):invalid {
+   border-color: #9b2424;
+}
+
+/* Indicates the currently selected navigation page. */
+nav a[aria-current="page"] {
+   text-decoration: underline;
+   font-weight: bold;
+}
+
+/* Responsive site-wide additions for Milestone 2 */
+:root { --accent-color: #b45309; --muted-color: #405366; --content-width: 1100px; }
+.site-header .header-inner { max-width: var(--content-width); margin: auto; }
+.site-name { font-size: 1.6rem; font-weight: 700; margin: 0 0 1rem; }
+nav ul { flex-direction: column; gap: .35rem; }
+nav a { display: inline-block; padding: .25rem .5rem; border-radius: 4px; }
+nav a[aria-current="page"] { background: #fff; color: var(--brand-color); text-decoration: none; }
+main { max-width: var(--content-width); padding: 1rem; }
+.page-intro { border-left: 5px solid var(--accent-color); }
+.page-intro h1 { color: var(--brand-color); font-size: 2rem; }
+h2 { font-size: 1.5rem; } h3 { font-size: 1.15rem; color: var(--brand-color); }
+.cards { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.card { border: 1px solid #d5dce4; border-radius: 6px; padding: 1rem; background: #f9fbfd; }
+.card h3 { margin-top: 0; }
+figure { margin: 1rem 0; } figure img { display: block; width: 100%; height: auto; border-radius: 6px; }
+figcaption { font-size: .9rem; color: var(--muted-color); margin-top: .4rem; }
+a { color: #174b78; } nav a { color: white; }
+@media (min-width: 42rem) {
+   main { padding: 2rem; }
+   nav ul { flex-direction: row; flex-wrap: wrap; gap: .65rem; }
+   .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 65rem) { .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
